@@ -28,7 +28,7 @@ $result_ditemukan = mysqli_query($koneksi, $query_ditemukan);
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.php">Beranda</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="cari.php">Cari Barang</a></li>
                     <li><a href="laporan_hilang.php">Laporkan</a></li>
                     <li><a href="barang_ditemukan.php">Barang Ditemukan</a></li>
