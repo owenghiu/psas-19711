@@ -3,7 +3,7 @@
 $host = "localhost";
 $username = "root";  // Default XAMPP username
 $password = "";      // Default XAMPP password is empty
-$database = "findurbarang";
+$database = "aurel_db";
 
 // Create connection to MySQL server (without database)
 $koneksi = mysqli_connect($host, $username, $password);
