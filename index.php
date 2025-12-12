@@ -24,7 +24,7 @@ $result_ditemukan = mysqli_query($koneksi, $query_ditemukan);
     <header>
         <div class="container">
             <div class="logo">
-                <h1>FindMySchoolStuff</h1>
+                <h1>HANA CANTIK</h1>
             </div>
             <nav>
                 <ul>
