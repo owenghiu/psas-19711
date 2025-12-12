@@ -1,0 +1,201 @@
+Baik! Berikut **desain struktur dan penjelasan lengkap** untuk web aplikasi pencarian barang hilang **menggunakan HTML, PHP, dan CSS** *tanpa menampilkan kode*. Jadi ini berupa **gambaran arsitektur**, **alur halaman**, dan **fungsi tiap file**, sehingga kamu bisa mengembangkannya sendiri.
+
+---
+
+# 🌐 **Nama Website: FindMySchoolStuff**
+
+# 🗂️ **Struktur Folder & File (Tanpa Kode)**
+
+```
+/project-folder
+│── index.php                → halaman beranda
+│── cari.php                 → halaman pencarian barang
+│── laporan_hilang.php       → form lapor barang hilang
+│── barang_ditemukan.php     → daftar barang ditemukan
+│── detail.php               → halaman detail barang
+│── proses_lapor.php         → proses input barang (PHP)
+│── koneksi.php              → koneksi database
+│── style.css                → file styling utama
+│── /uploads                 → folder menyimpan foto barang
+└── /assets                  → ikon, gambar pendukung
+```
+
+---
+
+# 🎨 **Desain Tiap Halaman (Secara Visual & Fungsional)**
+
+## **1. index.php (Beranda)**
+
+**Desain tampilan:**
+
+* Header dengan logo + menu navigasi.
+* Banner besar dengan gambar ilustrasi siswa mencari barang.
+* Tombol cepat:
+
+  * “Cari Barang Hilang”
+  * “Laporkan Barang”
+
+**Isi bagian bawah:**
+
+* 6 barang hilang terbaru (tampilan kartu)
+* 6 barang ditemukan terbaru
+
+**Fungsi PHP:**
+
+* Menampilkan data terbaru dari database.
+* Query SELECT untuk barang hilang & ditemukan.
+
+---
+
+## **2. cari.php (Halaman Pencarian Barang)**
+
+**Tampilan utama:**
+
+* Search bar (input teks)
+* Filter kategori, lokasi, tanggal
+* Hasil tampil sebagai grid kartu barang
+
+**Kartu berisi:**
+
+* Foto barang
+* Nama barang
+* Lokasi hilang
+* Tanggal
+* Tombol “Lihat Detail”
+
+**Fungsi PHP:**
+
+* Mengambil query pencarian dari input user
+* SELECT * FROM barang WHERE nama LIKE …
+* Mengambil filter kategori & lokasi
+
+---
+
+## **3. laporan_hilang.php (Form laporan)**
+
+**Bagian form berisi:**
+
+* Nama barang
+* Upload foto
+* Lokasi terakhir terlihat
+* Tanggal hilang
+* Deskripsi barang (ciri-ciri)
+* Kontak pelapor
+* Tombol “Kirim”
+
+**Fungsi PHP (diproses di proses_lapor.php):**
+
+* Menyimpan data ke database
+* Mengupload foto ke folder /uploads
+* Validasi data
+
+---
+
+## **4. barang_ditemukan.php**
+
+Tampilan daftar barang yang sudah ditemukan siswa/guru.
+
+**Desain:**
+
+* Daftar dalam bentuk kartu
+* Foto barang
+* Lokasi ditemukan
+* Tanggal ditemukan
+* Tombol “Saya pemilik barang ini”
+
+**Fungsi PHP:**
+
+* Query SELECT barang status = “ditemukan”
+* Menampilkan data dalam bentuk grid
+
+---
+
+## **5. detail.php**
+
+Tampilan detail satu barang:
+
+**Isi:**
+
+* Foto ukuran besar
+* Nama barang
+* Lokasi hilang / lokasi ditemukan
+* Tanggal hilang
+* Deskripsi & ciri-ciri
+* Kontak pelapor
+* Status barang (Hilang / Ditemukan)
+* Tombol:
+
+  * “Hubungi Pelapor”
+  * “Klaim Barang”
+
+**Fungsi PHP:**
+
+* Mengambil data berdasarkan ID barang
+* Query SELECT WHERE id = …
+
+---
+
+## **6. koneksi.php**
+
+**Fungsi:**
+
+* Menyimpan konfigurasi database (host, user, pass, nama DB)
+* Digunakan oleh setiap file yang butuh query
+
+---
+
+## **7. style.css**
+
+**Desain gaya tampilan:**
+
+### **Warna utama:**
+
+* Biru lembut #4A90E2
+* Putih #ffffff
+* Abu muda #f5f5f5
+
+### **Komponen:**
+
+* Kartu barang dengan rounded + shadow lembut
+* Button biru dengan hover gelap
+* Typography:
+
+  * Judul: Poppins bold
+  * Isi: Inter regular
+
+---
+
+# 💾 **Struktur Database (MySQL)**
+
+### **Tabel: barang**
+
+| Kolom      | Tipe      | Keterangan               |
+| ---------- | --------- | ------------------------ |
+| id         | INT (PK)  | Auto increment           |
+| nama       | VARCHAR   | Nama barang              |
+| foto       | VARCHAR   | Nama file foto           |
+| lokasi     | VARCHAR   | Lokasi terakhir terlihat |
+| tanggal    | DATE      | Tanggal hilang/ditemukan |
+| deskripsi  | TEXT      | Ciri-ciri barang         |
+| kontak     | VARCHAR   | Kontak pelapor           |
+| status     | ENUM      | “hilang” / “ditemukan”   |
+| created_at | TIMESTAMP | Waktu upload data        |
+
+---
+
+# 📱 **Desain Responsif**
+
+* Header berubah menjadi menu hamburger saat layar kecil
+* Kartu barang berubah dari 3 kolom → 1 kolom saat di HP
+* Tombol diperbesar di mobile
+
+---
+
+# 📌 Jika kamu mau:
+
+✔️ Aku bisa buatkan **mockup visual UI**
+✔️ Aku bisa buatkan **penjelasan flowchart sistem**
+✔️ Aku bisa buatkan **database SQL ready-to-import**
+✔️ Atau aku tuliskan **kode lengkap HTML + CSS + PHP**
+
+Tinggal bilang mau yang mana!
